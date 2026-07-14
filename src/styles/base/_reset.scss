@@ -11,6 +11,10 @@ html {
   background: $gray;
 
   transition: none;
+
+  &:has(.aside:target) {
+    overflow: hidden;
+  }
 }
 
 .visually-hidden {

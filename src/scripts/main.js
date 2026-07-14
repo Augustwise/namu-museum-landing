@@ -161,29 +161,6 @@ const setupModalForButtons = () => {
   });
 };
 
-const setupMenuScrollLock = () => {
-  const applyScrollLock = () => {
-    if (window.location.hash === '#menu') {
-      lockScroll();
-
-      return;
-    }
-
-    const wasLocked = unlockScroll();
-
-    const targetId = window.location.hash.slice(1);
-    const target = targetId ? document.getElementById(targetId) : null;
-
-    if (wasLocked && target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  window.addEventListener('hashchange', applyScrollLock);
-  applyScrollLock();
-};
-
 document.addEventListener('DOMContentLoaded', () => {
   setupModalForButtons();
-  setupMenuScrollLock();
 });
