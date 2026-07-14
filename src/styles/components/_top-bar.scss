@@ -1,0 +1,77 @@
+.top-bar {
+  @include flex-center;
+  @include set-size(100%, 90px);
+
+  grid-column: 1 / -1;
+  grid-row: 1 / 1;
+  justify-content: space-between;
+
+  @include on-tablet {
+    height: 77px;
+  }
+
+  @include on-phone {
+    height: 80px;
+  }
+
+  &__logo {
+    cursor: pointer;
+    height: 40%;
+    object-fit: contain;
+
+    &:hover {
+      transform: scale($element-scale);
+    }
+  }
+
+  &__wrappper {
+    @include flex-center;
+    @include set-spaces(0, 0);
+
+    flex-flow: row nowrap;
+    gap: 40px;
+
+    @include on-phone {
+      flex-direction: row-reverse;
+      gap: 20px;
+    }
+  }
+  &__link {
+    @include set-size(30px, 30px);
+
+    display: block;
+  }
+
+  &__select {
+    @include flex-center;
+  }
+
+  &__lang {
+    @include set-font($font-raleway, 16px, 500, $font-white, 150%);
+
+    background: rgba($font-white, 0.1);
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:focus,
+    &:active,
+    &:hover {
+      transform: scale($element-scale);
+      outline: none;
+      border-color: $font-white;
+      box-shadow: none;
+    }
+
+    &--option {
+      background: $grey-blue;
+      color: $font-white;
+    }
+  }
+}

@@ -1,5 +1,32 @@
 'use strict';
 
+let savedScrollY = 0;
+
+const lockScroll = () => {
+  if (document.body.classList.contains('page--locked')) {
+    return;
+  }
+
+  savedScrollY = window.scrollY;
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.classList.add('page--locked');
+};
+
+const unlockScroll = () => {
+  if (!document.body.classList.contains('page--locked')) {
+    return false;
+  }
+
+  document.body.classList.remove('page--locked');
+  document.body.style.top = '';
+
+  document.documentElement.style.scrollBehavior = 'auto';
+  window.scrollTo(0, savedScrollY);
+  document.documentElement.style.scrollBehavior = '';
+
+  return true;
+};
+
 const createModalWindow = () => {
   const modal = document.createElement('div');
 
@@ -84,22 +111,14 @@ const createModalWindow = () => {
 
   const open = () => {
     clearTimeout(closeTimeout);
-
-    const scrollbarWidth
-      = window.innerWidth - document.documentElement.clientWidth;
-
     modal.classList.add('modal--open');
-    document.documentElement.classList.add('no-scroll');
-    document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+    lockScroll();
   };
 
   const close = () => {
     modal.classList.remove('modal--open');
 
-    closeTimeout = setTimeout(() => {
-      document.documentElement.classList.remove('no-scroll');
-      document.documentElement.style.paddingRight = '';
-    }, 500);
+    closeTimeout = setTimeout(unlockScroll, 500);
   };
 
   overlay.addEventListener('click', close);
@@ -142,4 +161,29 @@ const setupModalForButtons = () => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', setupModalForButtons);
+const setupMenuScrollLock = () => {
+  const applyScrollLock = () => {
+    if (window.location.hash === '#menu') {
+      lockScroll();
+
+      return;
+    }
+
+    const wasLocked = unlockScroll();
+
+    const targetId = window.location.hash.slice(1);
+    const target = targetId ? document.getElementById(targetId) : null;
+
+    if (wasLocked && target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  window.addEventListener('hashchange', applyScrollLock);
+  applyScrollLock();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupModalForButtons();
+  setupMenuScrollLock();
+});

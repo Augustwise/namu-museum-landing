@@ -1,0 +1,97 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+  }
+
+  &--open &__overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &__dialog {
+    position: relative;
+    width: 90vw;
+    max-width: 480px;
+    background-color: $grey-blue;
+    padding: 24px;
+    border-radius: 8px;
+    z-index: 1;
+    transform: scale(0.8) translateY(-20px);
+    transition: transform 0.5s ease;
+  }
+
+  &--open &__dialog {
+    transform: scale(1) translateY(0);
+  }
+
+  &__title {
+    @include set-font($font-play-fair, 24px, 700, $font-white, 125%);
+
+    margin: 0 0 16px;
+  }
+
+  &__form {
+    @include set-flex(column, flex-start, stretch);
+
+    gap: 16px;
+  }
+
+  &__input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $input;
+    color: $font-white;
+    padding: 8px 0;
+    outline: none;
+    caret-color: $input-active;
+
+    &::placeholder {
+      @include set-font($font-raleway, 16px, 400, $font-white, 150%);
+
+      color: $font-white;
+      opacity: 0.8;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $input-active;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    color: $font-white;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale($element-scale);
+    }
+  }
+}

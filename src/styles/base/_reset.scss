@@ -1,0 +1,36 @@
+* {
+  @include set-spaces(0, 0);
+
+  box-sizing: border-box;
+  transition: all $element-transition ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden scroll;
+  background: $gray;
+
+  transition: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+article {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: $font-white;
+}

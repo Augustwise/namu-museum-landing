@@ -1,0 +1,145 @@
+.aside {
+  @include set-size(100vw, 100vh);
+
+  overflow: auto;
+  max-width: $page-max-width;
+  background-color: $grey-blue;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+  z-index: 999;
+  min-height: 650px;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  @include on-tablet {
+    padding-inline: 40px;
+  }
+
+  @include on-phone {
+    padding-inline: 20px;
+  }
+
+  &__content {
+    @include set-grid;
+    @include set-size(100%, 100%);
+    @include set-padding-inline;
+
+    position: relative;
+    grid-template-rows: 90px auto auto auto;
+    max-width: $content-max-width;
+    margin-inline: auto;
+  }
+
+  &__dates {
+    grid-column: 1 / 6;
+    grid-row: 2 / 2;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      flex-wrap: wrap;
+    }
+
+    &--title {
+      @include set-spaces(0, 0);
+      @include set-font($font-raleway, 14px, 400, $font-white, 100%);
+
+      display: inline-block;
+      letter-spacing: 0%;
+    }
+
+    &--subtitle {
+      @include set-spaces(0, 0);
+      @include set-font($font-raleway, 16px, 600, $font-white, 100%);
+
+      display: inline-block;
+      letter-spacing: 0%;
+    }
+  }
+
+  &__links {
+    @include set-flex(column, start, stretch);
+
+    grid-column: 1 / 6;
+    grid-row: 3 / 3;
+    align-self: start;
+    gap: 60px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-phone {
+      gap: 20px;
+      grid-column: 1 / -1;
+    }
+
+    &--link {
+      @include set-font($font-play-fair, 47px, 700, $font-white, 120%);
+
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background-color: $font-white;
+        transition: all 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      @include on-phone {
+        font-size: 20px;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__button {
+    grid-column: 1 / 4;
+    grid-row: 4 / 4;
+    margin: 0;
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__image {
+    @include on-phone {
+      display: none;
+    }
+  }
+
+  &__decoration-line {
+    @include set-size(100%, 1px);
+
+    background-color: $font-white;
+    grid-column: 1 / 7;
+    grid-row: 3 / 3;
+    align-self: end;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+  }
+}

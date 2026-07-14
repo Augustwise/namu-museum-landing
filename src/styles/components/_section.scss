@@ -1,0 +1,44 @@
+.section {
+  @include set-padding-inline;
+
+  width: 100%;
+  margin-top: 13vh;
+  max-width: $content-max-width;
+  margin-inline: auto;
+
+  &__title {
+    @include set-font($font-play-fair, 48px, 700, $font-black, 120%);
+
+    margin: 0;
+    grid-column: 1 / 7;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      font-size: 40px;
+    }
+
+    @include on-phone {
+      font-size: 28px;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__content {
+    @include set-size(100%, 100%);
+    @include set-grid;
+  }
+}
+
+.article {
+  &__date {
+    @include set-font($font-raleway, 16px, 400, $button-main, 150%);
+  }
+
+  &__title {
+    @include set-font($font-play-fair, 24px, 700, $font-black, 125%);
+  }
+
+  &__decription {
+    @include set-font($font-raleway, 16px, 400, $font-grey, 150%);
+  }
+}

@@ -1,0 +1,61 @@
+.actual {
+  width: 100%;
+
+  &__exibition {
+    @include set-flex(column, flex-start, start);
+
+    width: 100%;
+    margin-top: 10vh;
+    gap: 10px;
+
+    /* keeps the buttons of both cards aligned on the bottom edge */
+    .article__decription {
+      margin-bottom: 40px;
+    }
+
+    &--first {
+      grid-column: 1 / 7;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+        grid-row: 2 / 2;
+      }
+    }
+
+    &--second {
+      grid-column: 7 / -1;
+
+      @include on-tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+        grid-row: 3 / 3;
+      }
+    }
+  }
+
+  &__picture {
+    /* the fixed aspect-ratio keeps both cards' images the same height */
+    aspect-ratio: 570 / 484;
+
+    @include on-tablet {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  &__button {
+    width: 270px;
+    max-width: 100%;
+    margin-top: auto;
+
+    @include on-tablet {
+      width: 100%;
+    }
+  }
+}

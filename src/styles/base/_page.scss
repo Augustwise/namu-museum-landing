@@ -1,0 +1,13 @@
+.page {
+  margin: 0;
+  background: $gray;
+  max-width: $page-max-width;
+  box-sizing: border-box;
+  margin-inline: auto;
+
+  &--locked {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+}

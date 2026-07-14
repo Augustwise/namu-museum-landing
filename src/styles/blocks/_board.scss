@@ -1,0 +1,81 @@
+.board {
+  @include set-size(100vw, 100vh);
+
+  max-width: none;
+  padding-inline: 0;
+  margin-inline: 0;
+  background-color: $grey-blue;
+  position: relative;
+  min-height: 400px;
+
+  @include on-tablet {
+    height: 50vh;
+  }
+
+  @include on-phone {
+    height: 60vh;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__content {
+    @include set-padding-inline;
+
+    grid-template-rows: auto auto auto;
+    align-content: center;
+    row-gap: 0;
+  }
+
+  &__title {
+    @include set-font($font-play-fair, 80px, 700, $font-white, 100%);
+
+    grid-column: 6 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      font-size: 62px;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      font-size: 38px;
+    }
+  }
+
+  &__text {
+    @include set-font($font-raleway, 16px, 400, $font-white, 150%);
+
+    margin-top: 20px;
+    grid-column: 6 / 11;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__button {
+    grid-column: 6 / 9;
+    margin-top: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+}

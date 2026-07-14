@@ -1,0 +1,63 @@
+.button {
+  display: block;
+
+  @include flex-center;
+  @include set-font($font-raleway, 16px, 600, $font-white, 100%);
+  @include set-size(100%, 60px);
+
+  text-decoration: none;
+  grid-column: 1 / 4;
+  background-color: $button-main;
+  border: none;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+
+  &:active {
+    background-color: $button-passed;
+  }
+
+  &:disabled {
+    background-color: $button-disabled;
+  }
+
+  @include on-phone {
+    grid-column: 1 / -1;
+  }
+
+  &--light {
+    margin: 0;
+    grid-column: 10 / -1;
+    background-color: transparent;
+    border: 1px solid $button-main;
+    color: $button-main;
+
+    &:hover {
+      background-color: inherit;
+      border-color: $button-hover;
+      color: $button-hover;
+    }
+
+    &:active {
+      background-color: inherit;
+      border-color: $button-passed;
+      color: $button-passed;
+    }
+
+    &:disabled {
+      background-color: inherit;
+      border-color: $button-disabled;
+      color: $button-disabled;
+    }
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      margin-top: 30px;
+    }
+  }
+}
