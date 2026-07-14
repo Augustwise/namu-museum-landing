@@ -29,17 +29,31 @@ const createModalWindow = () => {
 
   modalForm.className = 'modal__form';
 
+  const nameLabel = document.createElement('label');
+
+  nameLabel.className = 'visually-hidden';
+  nameLabel.htmlFor = 'modal_name';
+  nameLabel.textContent = "Ваше ім'я";
+
   const nameInput = document.createElement('input');
 
   nameInput.className = 'modal__input';
+  nameInput.id = 'modal_name';
   nameInput.type = 'text';
   nameInput.name = 'name';
   nameInput.placeholder = "Ім'я";
   nameInput.required = true;
 
+  const emailLabel = document.createElement('label');
+
+  emailLabel.className = 'visually-hidden';
+  emailLabel.htmlFor = 'modal_email';
+  emailLabel.textContent = 'Ваша електронна пошта';
+
   const emailInput = document.createElement('input');
 
   emailInput.className = 'modal__input';
+  emailInput.id = 'modal_email';
   emailInput.type = 'email';
   emailInput.name = 'email';
   emailInput.placeholder = 'Email';
@@ -51,7 +65,9 @@ const createModalWindow = () => {
   submitBtn.type = 'submit';
   submitBtn.textContent = 'Відправити';
 
+  modalForm.appendChild(nameLabel);
   modalForm.appendChild(nameInput);
+  modalForm.appendChild(emailLabel);
   modalForm.appendChild(emailInput);
   modalForm.appendChild(submitBtn);
 

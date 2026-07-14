@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -32,7 +32,7 @@
           <img
             src="/src/images/logo.svg"
             class="top-bar__logo"
-            alt="Museum logo"
+            alt="Національний художній музей України"
           />
           <div class="top-bar__wrappper">
             <a
@@ -42,13 +42,35 @@
               <img
                 src="/src/images/menu.svg"
                 class="icon"
-                alt="menu"
+                alt="Відкрити меню"
               />
             </a>
             <div class="top-bar__select">
-              <select class="top-bar__lang">
-                <option class="top-bar__lang--option">UA</option>
-                <option class="top-bar__lang--option">EN</option>
+              <label
+                class="visually-hidden"
+                for="lang-header"
+              >
+                Мова сайту
+              </label>
+              <select
+                id="lang-header"
+                name="lang-header"
+                class="top-bar__lang"
+              >
+                <option
+                  class="top-bar__lang--option"
+                  value="uk"
+                  lang="uk"
+                >
+                  UA
+                </option>
+                <option
+                  class="top-bar__lang--option"
+                  value="en"
+                  lang="en"
+                >
+                  EN
+                </option>
               </select>
             </div>
           </div>
@@ -75,7 +97,7 @@
         <img
           src="/src/images/header_image.webp"
           class="front-image header__image"
-          alt="Картина з виставки"
+          alt="Портрет молодої жінки у вишиванці та червоному намисті з виставки «Мистецтво ХІХ - ХХ ст.»"
           width="625"
           height="663"
           fetchpriority="high"
@@ -92,7 +114,7 @@
           <img
             src="/src/images/logo.svg"
             class="top-bar__logo"
-            alt="Museum logo"
+            alt="Національний художній музей України"
           />
           <div class="top-bar__wrappper">
             <a
@@ -102,13 +124,35 @@
               <img
                 src="/src/images/cross.svg"
                 class="icon"
-                alt="menu"
+                alt="Закрити меню"
               />
             </a>
             <div class="top-bar__select">
-              <select class="top-bar__lang">
-                <option class="top-bar__lang--option">UA</option>
-                <option class="top-bar__lang--option">EN</option>
+              <label
+                class="visually-hidden"
+                for="lang-menu"
+              >
+                Мова сайту
+              </label>
+              <select
+                id="lang-menu"
+                name="lang-menu"
+                class="top-bar__lang"
+              >
+                <option
+                  class="top-bar__lang--option"
+                  value="uk"
+                  lang="uk"
+                >
+                  UA
+                </option>
+                <option
+                  class="top-bar__lang--option"
+                  value="en"
+                  lang="en"
+                >
+                  EN
+                </option>
               </select>
             </div>
           </div>
@@ -160,7 +204,7 @@
         <img
           src="/src/images/aside_image.webp"
           class="front-image aside__image"
-          alt="Картина з виставки"
+          alt="Портрет хлопчика-художника з палітрою та пензлями у червоному кріслі"
           width="624"
           height="697"
           loading="lazy"
@@ -185,7 +229,7 @@
             <div class="picture actual__picture">
               <img
                 src="/src/images/actual1.webp"
-                alt="Кураторська виставка Ангели"
+                alt="Скульптура ангела з крилами — експонат кураторської виставки «Ангели»"
                 class="picture__image"
                 width="570"
                 height="484"
@@ -211,7 +255,7 @@
             <div class="picture actual__picture">
               <img
                 src="/src/images/actual2.webp"
-                alt="Мистецтво ХХ - XXI ст."
+                alt="Автопортрет художника з експозиції «Мистецтво ХХ ст. — XXI ст.»"
                 class="picture__image"
                 width="570"
                 height="484"
@@ -252,7 +296,7 @@
               <img
                 src="/src/images/event1.webp"
                 class="picture__image"
-                alt="Кураторські екскурсії"
+                alt="Куратор Павло Гудімов у виставковій залі музею"
                 width="370"
                 height="475"
                 loading="lazy"
@@ -282,7 +326,7 @@
               <img
                 src="/src/images/event2.webp"
                 class="picture__image"
-                alt="Майстер-клас Подорож до Австралії"
+                alt="Відвідувачка музею біля білої скульптури у виставковій залі"
                 width="370"
                 height="475"
                 loading="lazy"
@@ -313,7 +357,7 @@
         <img
           src="/src/images/board_image.webp"
           class="board__image"
-          alt="Інтерʼєр музею"
+          alt="Портрет темноволосої жінки у профіль"
           width="578"
           height="800"
           loading="lazy"
@@ -357,7 +401,7 @@
               <img
                 src="/src/images/news1.webp"
                 class="picture__image"
-                alt="Оголошення переможця"
+                alt="Три репродукції картин — призи розіграшу"
                 width="570"
                 height="370"
                 loading="lazy"
@@ -377,7 +421,7 @@
               <img
                 src="/src/images/news2.webp"
                 class="picture__image news__image--second"
-                alt="Міжнародний день котів"
+                alt="Гравюра з котом та мишею"
                 width="280"
                 height="280"
                 loading="lazy"
@@ -402,9 +446,16 @@
           <h3 class="section__title subscribe__title">
             Підпишіться на дайджест
           </h3>
+          <label
+            class="visually-hidden"
+            for="form_input"
+          >
+            Ваша електронна пошта
+          </label>
           <input
             required
             id="form_input"
+            name="email"
             type="email"
             class="subscribe__input"
             placeholder="e-mail"
@@ -494,7 +545,7 @@
             <img
               src="/src/images/facebook.svg"
               class="footer__icon"
-              alt="icon"
+              alt="Ми у Facebook"
             />
           </a>
           <a
@@ -504,7 +555,7 @@
             <img
               src="/src/images/twitter.svg"
               class="footer__icon"
-              alt="icon"
+              alt="Ми у Twitter"
             />
           </a>
           <a
@@ -514,7 +565,7 @@
             <img
               src="/src/images/telegram.svg"
               class="footer__icon"
-              alt="icon"
+              alt="Ми у Telegram"
             />
           </a>
           <a
@@ -524,7 +575,7 @@
             <img
               src="/src/images/instagram.svg"
               class="footer__icon"
-              alt="icon"
+              alt="Ми в Instagram"
             />
           </a>
         </div>
@@ -537,6 +588,7 @@
         </a>
         <a
           href="#"
+          lang="en"
           class="footer__privacy footer__privacy--title"
         >
           Privacy — Terms
@@ -549,7 +601,7 @@
           <img
             src="/src/images/scroll_up.svg"
             class="footer__to-top--icon"
-            alt="to-top"
+            alt="Повернутись нагору сторінки"
           />
         </a>
       </div>

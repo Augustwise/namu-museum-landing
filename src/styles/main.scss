@@ -19,6 +19,19 @@ html {
   height: 100vh;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .page {
   margin: 0;
   background: $gray;
@@ -322,6 +335,26 @@ a {
     grid-template-rows: repeat(4, auto);
     max-width: $content-max-width;
     margin-inline: auto;
+    padding-top: 90px;
+
+    @include on-tablet {
+      padding-top: 77px;
+    }
+
+    @include on-phone {
+      padding-top: 80px;
+    }
+  }
+
+  & .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: $grey-blue;
+
+    @include set-padding-inline;
   }
 
   &__title {
