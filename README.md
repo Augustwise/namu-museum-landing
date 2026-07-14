@@ -25,7 +25,7 @@ Figma design file: [NAMU Landing Design](https://www.figma.com/file/HL3XGt5ZatvJ
 - Prettier — code formatting
 
 **Deployment**
-- Netlify / GitHub Pages — hosting
+- GitHub Pages — hosting
 
 ## Getting Started
 
