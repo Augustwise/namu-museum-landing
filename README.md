@@ -13,11 +13,22 @@ Figma design file: [NAMU Landing Design](https://www.figma.com/file/HL3XGt5ZatvJ
 ## Technologies Used
 
 **Core**
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
 - HTML5 — semantic markup
 - SCSS — styling
 - JavaScript (Vanilla) — interactivity
 
 **Development & Tooling**
+
+![Parcel](https://img.shields.io/badge/Parcel-21374B?style=for-the-badge&logo=parcel&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![Stylelint](https://img.shields.io/badge/Stylelint-263238?style=for-the-badge&logo=stylelint&logoColor=white)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black)
+
 - Parcel — build tool and dev server
 - ESLint — JavaScript linting
 - Stylelint — SCSS linting
@@ -25,6 +36,9 @@ Figma design file: [NAMU Landing Design](https://www.figma.com/file/HL3XGt5ZatvJ
 - Prettier — code formatting
 
 **Deployment**
+
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
+
 - GitHub Pages — hosting
 
 ## Getting Started
