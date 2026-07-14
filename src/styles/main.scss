@@ -12,11 +12,12 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-}
 
-.no-scroll {
-  overflow: hidden;
-  height: 100vh;
+  transition: none;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 .visually-hidden {

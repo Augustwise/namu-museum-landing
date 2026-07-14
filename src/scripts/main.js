@@ -80,16 +80,25 @@ const createModalWindow = () => {
 
   document.body.appendChild(modal);
 
+  let closeTimeout = null;
+
   const open = () => {
+    clearTimeout(closeTimeout);
+
+    const scrollbarWidth
+      = window.innerWidth - document.documentElement.clientWidth;
+
     modal.classList.add('modal--open');
-    document.body.classList.add('no-scroll');
+    document.documentElement.classList.add('no-scroll');
+    document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
   };
 
   const close = () => {
     modal.classList.remove('modal--open');
 
-    setTimeout(() => {
-      document.body.classList.remove('no-scroll');
+    closeTimeout = setTimeout(() => {
+      document.documentElement.classList.remove('no-scroll');
+      document.documentElement.style.paddingRight = '';
     }, 500);
   };
 
